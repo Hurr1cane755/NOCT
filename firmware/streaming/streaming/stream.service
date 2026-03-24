@@ -1,0 +1,13 @@
+[Unit]
+Description=NOCT Camera Stream
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/noct/stream.py
+Restart=always
+RestartSec=5
+User=noct
+
+[Install]
+WantedBy=multi-user.target
